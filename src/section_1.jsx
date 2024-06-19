@@ -1,7 +1,6 @@
 import { useState } from "react";
 import "./section_1.css";
 import { Nav_bar } from "./nav_bar";
-import { Form_buttons } from "./form_button";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
@@ -35,7 +34,28 @@ const containerVariants = {
     }
 }
 
+const arrowVariants = {
+  initial: {
+    scale: 1
+  },
+  hover: {
+    scale: [.95, 1.1],
+    transition: {
+      type: "spring",
+      repeat: Infinity,
+      repeatType: "reverse",
+      ease: "easeInOut",
+      duration: 1,
+      stiffness: 120,
+      mass: 1,
+      damping: 20,
+    } 
+  }
+}
+
 const Section_1 = () => {
+  const MotionLink = motion(Link);
+
   return (
     <motion.div
      className="form_container section_1_container"
@@ -59,12 +79,24 @@ const Section_1 = () => {
           ></textarea>
         </div>
         <div className="form_button_container">
-          <Link to="/CV-Maker" className="left_arrow_container">
+          <MotionLink
+           to="/CV-Maker" 
+           className="left_arrow_container"
+           variants={arrowVariants}
+           initial="initial"
+           whileHover="hover"
+           >
             <div className="left_arrow">&#8592;</div>
-          </Link>
-          <Link to="/CV-Maker/section_2" className="right_arrow_container">
+          </MotionLink>
+          <MotionLink
+           to="/CV-Maker/section_2" 
+           className="right_arrow_container"
+           variants={arrowVariants}
+           initial="initial"
+           whileHover="hover"
+           >
             <div className="right_arrow">&#8594;</div>
-          </Link>
+          </MotionLink>
         </div>
       </div>
     </motion.div>

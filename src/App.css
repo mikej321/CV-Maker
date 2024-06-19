@@ -39,8 +39,7 @@ body {
 
 .left_arrow_container {
     background: #EAF1F9;
-    width: 5rem;
-    height: 2.5rem;
+    padding: .5rem 2rem;
     display: flex;
     justify-content: center;
     border-radius: 4px;
@@ -58,8 +57,7 @@ body {
 
 .right_arrow_container {   
     background: #EAF1F9;
-    width: 5rem;
-    height: 2.5rem;
+    padding: .5rem 2rem;
     display: flex;
     justify-content: center;
     border-radius: 4px;
