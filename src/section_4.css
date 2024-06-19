@@ -1,0 +1,68 @@
+.section_4_intro_container {
+    background: #FAFCFF;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: "title title" "first_row first_row" "second_row second_row" "third_row third_row" "fourth_row fourth_row" "fifth_row fifth_row" "sixth_row sixth_row" "arrows arrows";
+    border-radius: 8px;
+    padding: 2rem;
+    gap: 2rem;
+    min-width: 37.5rem;
+}
+
+.section_4_intro_container label {
+    font-size: 1.2rem;
+}
+
+.school_name_input_container,
+.school_location_input_container,
+.degree_container,
+.field_of_study_container,
+.accomplishments_container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.school_name_input_container input[type="text"],
+.school_location_input_container input[type="text"],
+.degree_container input[type="text"],
+.field_of_study_container input[type="text"] {
+    width: 100%;
+    height: 3rem;
+    background: #EAF1F9;
+    border: none;
+    border-radius: 8px;
+    padding-inline: 1rem;
+}
+
+.school_name_input_container {
+    grid-area: first_row;
+}
+
+.school_location_input_container {
+    grid-area: second_row;
+}
+
+.degree_container {
+    grid-area: fourth_row;
+}
+
+.field_of_study_container {
+    grid-area: fifth_row;
+}
+
+.accomplishments_container {
+    grid-area: sixth_row;
+    margin-bottom: 2rem;
+}
+
+.accomplishments_container textarea {
+    height: 20rem;
+    padding: 1rem;
+    background: #EAF1F9;
+    border: none;
+    border-radius: 12px;
+    resize: none;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}

@@ -1,0 +1,52 @@
+.section_5_intro_container {
+    background: #FAFCFF;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: "title title" "first_row first_row" "second_row second_row" "third_row third_row" "fourth_row fourth_row" "arrows arrows";
+    border-radius: 8px;
+    padding: 2rem;;
+    gap: 2rem;
+    min-width: 37.5rem;
+}
+
+.section_5_intro_container label {
+    font-size: 1.2rem;
+}
+
+.reference_name_input_container,
+.reference_location_input_container,
+.relationship_container,
+.contact_information_container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.reference_name_input_container input[type="text"],
+.reference_location_input_container input[type="text"],
+.relationship_container input[type="text"],
+.contact_information_container input[type="text"] {
+    width: 100%;
+    height: 3rem;
+    background: #EAF1F9;
+    border: none;
+    border-radius: 8px;
+    padding-inline: 1rem;
+}
+
+.reference_name_input_container {
+    grid-area: first_row;
+}
+
+.reference_location_input_container {
+    grid-area: second_row;
+}
+
+.relationship_container {
+    grid-area: third_row;
+}
+
+.contact_information_container {
+    grid-area: fourth_row;
+    margin-bottom: 2rem;
+}

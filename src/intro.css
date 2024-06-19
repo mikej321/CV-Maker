@@ -1,0 +1,59 @@
+/* Import for EB Garamond and Montserrat font */
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --sky_blue: #EAF1F9;
+    --darker_blue: #6C7F93;
+    --eb_garamond: 'EB Garamond', sans-serif;
+    --montserrat: 'Montserrat', sans-serif;
+}
+
+body {
+    background: var(--sky_blue);
+}
+
+/* Change back to display: flex after I finish
+creating the rest of the pages */
+
+/* Later, make it so that if I am on the start page,
+it will justify content to the center but let it be at
+the top on any other page */
+
+.intro_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10rem;
+    gap: 5rem;
+    width: 100%;
+    overflow: visible;
+}
+
+.intro_logo {
+    width: 100%;
+    max-width: 30rem;
+}
+
+.start_button {
+    width: 100%;
+    max-width: 15rem;
+    height: 5rem;
+    background: var(--darker_blue);
+    color: #E8EBEE;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: var(--montserrat);
+    font-weight: bold;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.75);
+    padding-inline: 2rem;
+}
+
+
+
+
+
+
+
+
+

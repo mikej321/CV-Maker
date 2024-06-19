@@ -1,0 +1,80 @@
+.section_3_intro_container {
+    background: #FAFCFF;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: "title title" "first_row first_row" "second_row second_row" "third_row third_row" "fourth_row fourth_row" "arrows arrows";
+    border-radius: 8px;
+    padding: 2rem;
+    gap: 2rem;
+    min-width: 37.5rem;
+}
+
+.employer_name_input_container,
+.employer_location_input_container,
+.job_duties_container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.section_3_intro_container label {
+    font-size: 1.2rem;
+}
+
+.employer_name_input_container input[type="text"],
+.employer_location_input_container input[type="text"] {
+    width: 100%;
+    height: 3rem;
+    background: #EAF1F9;
+    border: none;
+    border-radius: 8px;
+    padding-inline: 1rem;
+}
+
+.employer_name_input_container {
+    grid-area: first_row;
+}
+
+.employer_location_input_container {
+    grid-area: second_row;
+}
+
+.dates_worked_container {
+    grid-area: third_row;
+    display: flex;
+    justify-content: space-between;
+}
+
+.start_date_container,
+.end_date_container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.start_date_container input[type="date"],
+.end_date_container input[type="date"] {
+    width: 100%;
+    max-width: 20rem;
+    height: 3rem;
+    background: #EAF1F9;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    padding-inline: 1rem;
+}
+
+.job_duties_container {
+    grid-area: fourth_row;
+}
+
+.job_duties_container textarea {
+    height: 20rem;
+    padding: 1rem;
+    background: #EAF1F9;
+    border: none;
+    border-radius: 12px;
+    resize: none;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}

@@ -1,34 +1,4 @@
-/* Import for EB Garamond and Montserrat font */
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    scroll-behavior: smooth;
-}
-
-html {
-    font-size: 62.5%;
-}
-
-body {
-    font-size: 1.6rem;
-}
-
-.container {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    /* min-width: 37.5rem; */
-    /* justify-content: center; */
-    align-items: center;
-}
 
 .form_button_container {
     display: flex;
@@ -46,14 +16,12 @@ body {
     border-radius: 4px;
     pointer-events: all;
     cursor: pointer;
-    text-decoration: none;
 }
 
 .left_arrow {
     font-size: 2rem;
     color: #23292F;
     pointer-events: none;
-    text-decoration: none;
 }
 
 .right_arrow_container {   
@@ -65,12 +33,10 @@ body {
     border-radius: 4px;
     pointer-events: all;
     cursor: pointer;
-    text-decoration: none;
 }
 
 .right_arrow {
     font-size: 2rem;
     color: #23292F;
     pointer-events: none;
-    text-decoration: none;
 }

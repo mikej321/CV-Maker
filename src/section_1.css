@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+.form_container {
+    display: grid;
+    grid-template-areas: "nav_bar" "form_content";
+    font-family: 'Montserrat', sans-serif;
+    color: #23292F;
+}
+
+/* .section_1_container.container_closed {
+    min-width: 0;
+    max-width: 0;
+    height: 0;
+    overflow: hidden;
+} */
+
+.section_1_container {
+   
+}
+
+.section_1_intro_container {
+    background: #FAFCFF;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: "title title" "first_row first_row" "arrows arrows";
+    border-radius: 8px;
+    padding: 2rem;
+    gap: 2rem;
+    min-width: 37.5rem;
+}
+
+.intro_input_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    grid-area: first_row;
+    /* border: 1px solid blue; */
+}
+
+.section_title {
+    font-weight: normal;
+    font-family: 'EB Garamond', serif;
+    text-decoration: underline;
+    font-size: 1.6rem;
+    grid-area: title;
+    justify-self: center;
+}
+
+.section_1_intro_container label {
+    font-size: 1.2rem;
+
+}
+
+.section_1_intro_container textarea {
+    width: 100%;
+    min-width: 31rem;
+    height: 30rem;
+    border-radius: 8px;
+    border: none;
+    background: #EAF1F9;
+    padding: 1rem 0 0 1rem;
+    resize: none;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    grid-area: first_row;
+    
+}
