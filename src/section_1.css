@@ -38,6 +38,10 @@
     /* border: 1px solid blue; */
 }
 
+.section_1_container {
+    overflow: hidden;
+}
+
 .section_title {
     font-weight: normal;
     font-family: 'EB Garamond', serif;
@@ -59,11 +63,17 @@
     border-radius: 8px;
     border: none;
     background: #EAF1F9;
-    padding: 1rem 0 0 1rem;
     resize: none;
     font-size: 1.2rem;
     margin-top: 1rem;
     margin-bottom: 2rem;
-    grid-area: first_row;
-    
+    grid-area: first_row;  
+}
+
+.section_1_intro_container textarea[data-error="true"] {
+    outline: 2px solid red;
+}
+
+.section_1_intro_container textarea::placeholder {
+    text-align: center;
 }

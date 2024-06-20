@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import "./section_1.css";
 import { Nav_bar } from "./nav_bar";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 
 const containerVariants = {
@@ -53,9 +53,63 @@ const arrowVariants = {
   }
 }
 
-const Section_1 = () => {
-  const MotionLink = motion(Link);
+const errorVariants = {
+  initial: {
+    opacity: 0,
+    transition: {
+      type: "spring",
+      ease: "easeOut",
+      duration: .5,
+      delay: .25,
+    }
+  },
+  animate: {
+    opacity: 1,
+    transition: {
+      type: "spring",
+      ease: "easeOut",
+      duration: .5,
+      delay: .25,
+    }
+  },
+  exit: {
+    opacity: 0,
+    transition: {
+      type: "spring",
+      ease: "easeIn",
+      duration: .5,
+    }
+  }
+}
 
+const Section_1 = ({ sectionStatus, setSectionStatus }) => {
+  const MotionLink = motion(Link);
+  const [sectionComplete, setSectionComplete] = useState(false);
+  const textAreaRef = useRef();
+
+  const checkIntroSection = (e) => {
+    if (e.target.value !== "") {
+      e.target.dataset.error = "false";
+      setSectionComplete(true);
+    } else {
+      e.target.dataset.error = "true";
+      setSectionComplete(false);
+    }
+  }
+
+  const setIntroSectionData = (e) => {
+    if (e.target.classList.contains("right_arrow_container")) {
+      setSectionStatus((prev) => ({
+        ...prev,
+        section_1: {
+          complete: true,
+          intro_data: textAreaRef.current.value,
+        }
+      }))
+    }
+  }
+
+  
   return (
     <motion.div
      className="form_container section_1_container"
@@ -70,13 +124,30 @@ const Section_1 = () => {
           <label htmlFor="intro_text_area">
             Introduce yourself to employers
           </label>
-          <textarea
+          <motion.textarea
             name="intro_text_area"
             id="intro_text_area"
+            ref={textAreaRef}
             rows="5"
             cols="33"
+            maxLength="500"
             placeholder="Describe yourself in up to 5 sentences"
-          ></textarea>
+            autoFocus
+            onChange={(e) => checkIntroSection(e)}
+          ></motion.textarea>
+          <AnimatePresence mode="wait">
+          {
+            !sectionComplete && (
+                <motion.p
+                 className="error"
+                 variants={errorVariants}
+                 initial="initial"
+                 exit="exit"
+                 >Please fill out this area
+                </motion.p>
+                )
+              }
+          </AnimatePresence>
         </div>
         <div className="form_button_container">
           <MotionLink
@@ -90,12 +161,15 @@ const Section_1 = () => {
           </MotionLink>
           <MotionLink
            to="/CV-Maker/section_2" 
-           className="right_arrow_container"
+           className={!sectionComplete ? "right_arrow_container" : "right_arrow_container proceed"}
            variants={arrowVariants}
            initial="initial"
            whileHover="hover"
+           onClick={(e) => setIntroSectionData(e)}
            >
-            <div className="right_arrow">&#8594;</div>
+            <motion.div
+             className="right_arrow"
+             >&#8594;</motion.div>
           </MotionLink>
         </div>
       </div>

@@ -84,7 +84,6 @@ const Home = ({ homeStatus, setHomeStatus }) => {
         <motion.div
          className="intro_container"
          variants={containerVariants}
-         initial="initial"
          animate="animate"
          exit="exit"
          >
@@ -298,8 +297,8 @@ const Home = ({ homeStatus, setHomeStatus }) => {
                 <motion.button
                  type="button"
                  className="start_button"
-                 variants={buttonVariants}
-                 whileHover="hover"
+                //  variants={buttonVariants}
+                //  whileHover="hover"
                 >Get Started</motion.button>
             </Link>
         </motion.div>

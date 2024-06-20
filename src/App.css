@@ -21,6 +21,15 @@ body {
     font-size: 1.6rem;
 }
 
+input,
+textarea {
+    font-family: inherit;
+}
+
+textarea {
+    padding: 1rem;
+}
+
 .container {
     display: flex;
     flex-direction: column;
@@ -61,14 +70,30 @@ body {
     display: flex;
     justify-content: center;
     border-radius: 4px;
-    pointer-events: all;
+    pointer-events: none;
     cursor: pointer;
     text-decoration: none;
 }
 
+.right_arrow_container.proceed {
+    pointer-events: all;
+}
+
 .right_arrow {
     font-size: 2rem;
-    color: #23292F;
+    color: rgba(35, 41, 47, .5);
     pointer-events: none;
     text-decoration: none;
+    transition: color 0.2s ease-out;
+}
+
+.right_arrow_container.proceed .right_arrow {
+    color: rgba(35, 41, 47, 1);
+}
+
+p.error {
+    font-size: 1.2rem;
+    color: red;
+    margin-top: -1.5rem;
+    margin-bottom: 1rem;
 }

@@ -17,15 +17,35 @@ import { AnimatePresence } from 'framer-motion';
 function App() {
 
   const location = useLocation();
-  const [homeStatus, setHomeStatus] = useState({
-    started: true,
-    section_1: false,
-    section_2: false,
-    section_3: false,
-    section_4: false,
-    section_5: false,
-    section_6: false,
-    section_7: false,
+  const [sectionStatus, setSectionStatus] = useState({
+    section_1: {
+      complete: false,
+      intro_data: "",
+    },
+    section_2: {
+      complete: false,
+      intro_data: "",
+    },
+    section_3: {
+      complete: false,
+      intro_data: "",
+    },
+    section_4: {
+      complete: false,
+      intro_data: "",
+    },
+    section_5: {
+      complete: false,
+      intro_data: "",
+    },
+    section_6: {
+      complete: false,
+      intro_data: "",
+    },
+    section_7: {
+      complete: false,
+      intro_data: "",
+    },
   })
 
   
@@ -35,14 +55,14 @@ function App() {
         <Nav_bar />
         <AnimatePresence mode="wait">
           <Routes location={location} key={location.pathname}>
-            <Route path="/CV-Maker" element={<Home homeStatus={homeStatus} setHomeStatus={setHomeStatus} />} />
-            <Route path="/CV-Maker/section_1" element={<Section_1 />} />
-            <Route path="/CV-Maker/section_2" element={<Section_2 />} />
-            <Route path="/CV-Maker/section_3" element={<Section_3 />} />
-            <Route path="/CV-Maker/section_4" element={<Section_4 />} />
-            <Route path="/CV-Maker/section_5" element={<Section_5 />} />
-            <Route path="/CV-Maker/section_6" element={<Section_6 />} />
-            <Route path="/CV-Maker/section_7" element={<Section_7 />} />
+            <Route path="/CV-Maker/" element={<Home sectionStatus={sectionStatus} setSectionStatus={setSectionStatus}  />} />
+            <Route path="/CV-Maker/section_1" element={<Section_1 sectionStatus={sectionStatus} setSectionStatus={setSectionStatus} />} />
+            <Route path="/CV-Maker/section_2" element={<Section_2 sectionStatus={sectionStatus} setSectionStatus={setSectionStatus} />} />
+            <Route path="/CV-Maker/section_3" element={<Section_3 sectionStatus={sectionStatus} setSectionStatus={setSectionStatus} />} />
+            <Route path="/CV-Maker/section_4" element={<Section_4 sectionStatus={sectionStatus} setSectionStatus={setSectionStatus}/>} />
+            <Route path="/CV-Maker/section_5" element={<Section_5 sectionStatus={sectionStatus} setSectionStatus={setSectionStatus} />} />
+            <Route path="/CV-Maker/section_6" element={<Section_6 sectionStatus={sectionStatus} setSectionStatus={setSectionStatus} />} />
+            <Route path="/CV-Maker/section_7" element={<Section_7 sectionStatus={sectionStatus} setSectionStatus={setSectionStatus} />} />
           </Routes>
         </AnimatePresence>
       </div>
